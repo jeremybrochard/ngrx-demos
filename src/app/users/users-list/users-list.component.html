@@ -1,0 +1,7 @@
+<div>
+  <h3>Liste</h3>
+  <div fxLayout="column" fxLayoutGap="8px">
+    <app-users-item *ngFor="let user of usersList" [user]="user" (delete)="deleteUser(user)"></app-users-item>
+  </div>
+</div>
+

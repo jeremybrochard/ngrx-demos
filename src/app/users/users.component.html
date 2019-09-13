@@ -1,0 +1,8 @@
+<div>
+  <h1>Utilisateurs</h1>
+
+  <div fxLayout="column" fxLayoutGap="25px">
+    <app-users-creation-form (userCreated)="addUserToList($event)"></app-users-creation-form>
+    <app-users-list [usersList]="usersList"></app-users-list>
+  </div>
+</div>

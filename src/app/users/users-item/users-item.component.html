@@ -1,0 +1,11 @@
+<mat-card>
+  <div fxLayout="row" fxLayoutAlign="space-between start">
+    <div>
+      <mat-card-title>{{ user.firstName }} {{ user.lastName }}</mat-card-title>
+      <mat-card-subtitle>{{ user.email ? user.email : 'aucun email' }}</mat-card-subtitle>
+    </div>
+    <button mat-stroked-button (click)="emitDeleteEvent()">
+      <i class="material-icons">clear</i>
+    </button>
+  </div>
+</mat-card>

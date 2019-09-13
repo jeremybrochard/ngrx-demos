@@ -1,0 +1,5 @@
+<mat-form-field [appearance]="appearance">
+  <mat-label>{{name}}</mat-label>
+  <input matInput [type]="type" [placeholder]="placeholder" [formControl]="control" [required]="showRequiredMarker"/>
+  <mat-error *ngIf="control.hasError('required')">Champ requis</mat-error>
+</mat-form-field>

@@ -1,0 +1,11 @@
+<div>
+  <h3>Ajouter un utilisateur</h3>
+  <div fxLayout="row" fxLayoutAlign="start center" fxLayoutGap="25px">
+    <app-text-input [control]="newUserForm.get('firstName')" name="Prénom" [showRequiredMarker]="true"></app-text-input>
+    <app-text-input [control]="newUserForm.get('lastName')" name="Nom" [showRequiredMarker]="true"></app-text-input>
+    <app-text-input [control]="newUserForm.get('email')" name="Email"></app-text-input>
+    <button mat-raised-button color="primary" (click)="validateForm(newUserForm)">
+      Ajouter
+    </button>
+  </div>
+</div>
