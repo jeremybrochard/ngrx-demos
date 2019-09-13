@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { User } from '../user.model';
 
 @Component({
@@ -9,14 +9,14 @@ import { User } from '../user.model';
 export class UsersListComponent {
 
   @Input() usersList: User[];
+  @Output() userDeleted: EventEmitter<User>;
 
-  constructor() { }
+  constructor() {
+    this.userDeleted = new EventEmitter<User>();
+  }
 
   deleteUser(user: User) {
-    const index = this.usersList.findIndex(u => u.id === user.id);
-    if (index > -1) {
-      this.usersList.splice(index, 1);
-    }
+    this.userDeleted.emit(user);
   }
 
 }

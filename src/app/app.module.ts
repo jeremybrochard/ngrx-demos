@@ -11,6 +11,8 @@ import { UsersItemComponent } from './users/users-item/users-item.component';
 import { UsersListComponent } from './users/users-list/users-list.component';
 import { UsersComponent } from './users/users.component';
 import { UsersCreationFormComponent } from './users/users-creation-form/users-creation-form.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from 'src/environments/environment';
 
 
 @NgModule({
@@ -30,6 +32,10 @@ import { UsersCreationFormComponent } from './users/users-creation-form/users-cr
         strictStateImmutability: true,
         strictActionImmutability: true
       }
+    }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 25, // Retains last 25 states
+      logOnly: environment.production, // Restrict extension to log-only mode
     }),
     BrowserAnimationsModule,
     SharedModule,
