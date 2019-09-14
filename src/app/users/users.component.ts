@@ -1,11 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { User } from './user.model';
-import { Store, select } from '@ngrx/store';
-import { State } from '../reducers';
+import { select, Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
-import { getUsersList } from './reducer/users.selectors';
 import { addUser, deleteUser } from './reducer/users.actions';
+import { getUsersList } from './reducer/users.selectors';
+import { User } from './user.model';
+import { State } from '../reducers';
 
 @Component({
   selector: 'app-users',
