@@ -29,6 +29,9 @@ export function usersReducer(state = initialState, action) {
         usersList: state.usersList.filter(u => u.id !== action.payload)
       };
     }
+    default: {
+      return state;
+    }
   }
 }
 
