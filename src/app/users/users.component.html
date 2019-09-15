@@ -3,6 +3,6 @@
 
   <div fxLayout="column" fxLayoutGap="25px">
     <app-users-creation-form (userCreated)="addUser($event)"></app-users-creation-form>
-    <app-users-list [usersList]="usersList | async" (userDeleted)="deleteUser($event)"></app-users-list>
+    <app-users-list [errorMessage]="errorMessage | async" [usersList]="usersList | async" [isLoading]="isLoading | async" (userDeleted)="deleteUser($event)"></app-users-list>
   </div>
 </div>

@@ -9,6 +9,8 @@ import { User } from '../user.model';
 export class UsersListComponent {
 
   @Input() usersList: User[];
+  @Input() isLoading: boolean;
+  @Input() errorMessage: any;
   @Output() userDeleted: EventEmitter<User>;
 
   constructor() {

@@ -7,3 +7,13 @@ export const getUsersList = createSelector(
   selectUsersFeatureState,
   (state: UserFeatureState) => state.users.usersList
 );
+
+export const getUsersLoadingStatus = createSelector(
+  selectUsersFeatureState,
+  (state: UserFeatureState) => state.users.isLoadingUsers
+);
+
+export const getUsersErrorMessage = createSelector(
+  selectUsersFeatureState,
+  (state: UserFeatureState) => state.users.errorMessage
+);

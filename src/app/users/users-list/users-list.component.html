@@ -1,6 +1,11 @@
 <div>
   <h3>Liste</h3>
-  <div fxLayout="column" fxLayoutGap="8px">
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <div *ngIf="errorMessage">{{errorMessage}}</div>
+  <div *ngIf="!isLoading && !errorMessage" fxLayout="column" fxLayoutGap="8px">
+    <div *ngIf="usersList.length === 0">
+      Aucuns utilisateurs
+    </div>
     <app-users-item *ngFor="let user of usersList" [user]="user" (delete)="deleteUser(user)"></app-users-item>
   </div>
 </div>
